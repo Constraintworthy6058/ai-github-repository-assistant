@@ -6,15 +6,6 @@ RepoLens AI is an open-source Next.js application that connects to GitHub, lets 
 
 > Status: local-first v0.1.0. GitHub OAuth is implemented. GitHub App installations and webhooks are documented future work.
 
-## Screenshots
-
-Screenshots will be added after the first public release:
-
-- Landing page and privacy overview
-- Repository dashboard and file explorer
-- Grounded repository assistant
-- Pull request and issue analysis
-
 ## Features
 
 - GitHub OAuth sign-in with secure, server-only token access
