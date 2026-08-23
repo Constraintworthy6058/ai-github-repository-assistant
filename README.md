@@ -4,7 +4,7 @@ Understand repositories faster with private, local AI.
 
 RepoLens AI is an open-source Next.js application that connects to GitHub, lets developers explore accessible repositories, and provides evidence-grounded assistance for source code, architecture, pull requests, issues, and commits. Ollama is the default AI provider, so no paid AI service is required and selected repository context can stay on your machine.
 
-> Status: local-first v0.1.0. GitHub OAuth is implemented. GitHub App installations and webhooks are documented future work.
+> Status: v1.0.0 public release. GitHub OAuth, repository exploration, grounded AI assistance, Ollama integration, automated tests, and GitHub Actions CI are implemented. GitHub App installations and webhooks are documented future work.
 
 ## Features
 
@@ -54,6 +54,7 @@ Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for boundaries, context select
 - Ollama local chat API
 - Zod validation
 - Vitest
+- GitHub Actions CI
 
 ## Prerequisites
 
@@ -68,14 +69,12 @@ Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for boundaries, context select
 git clone https://github.com/Wadan3/ai-github-repository-assistant.git
 cd ai-github-repository-assistant
 Copy-Item .env.example .env
-npm install
-npm run db:push
-npm run dev
+npm.cmd install
+npm.cmd run db:push
+npm.cmd run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
-For the local pre-push copy produced by Codex, use the exact path shown in the completion report instead of cloning.
 
 ## Environment variables
 
@@ -94,7 +93,7 @@ Copy `.env.example` to `.env`. Never prefix secrets with `NEXT_PUBLIC_` and neve
 Generate `AUTH_SECRET` with:
 
 ```powershell
-npx auth@latest secret
+npx.cmd auth@latest secret
 ```
 
 ## GitHub OAuth
@@ -124,19 +123,19 @@ See [docs/OLLAMA_SETUP.md](docs/OLLAMA_SETUP.md) for custom models and Docker ho
 ## Local development
 
 ```powershell
-npm install
-npm run db:push
-npm run dev
+npm.cmd install
+npm.cmd run db:push
+npm.cmd run dev
 ```
 
 Useful commands:
 
 ```powershell
-npm run lint        # ESLint
-npm run typecheck   # Prisma generation + strict TypeScript
-npm test            # mocked automated test suite
-npm run build       # production build
-npm run db:studio   # inspect the local database
+npm.cmd run lint        # ESLint
+npm.cmd run typecheck   # Prisma generation + strict TypeScript
+npm.cmd test            # mocked automated test suite
+npm.cmd run build       # production build
+npm.cmd run db:studio   # inspect the local database
 ```
 
 Tests never require GitHub credentials or a running Ollama instance.
@@ -159,7 +158,7 @@ The product has explicit, safe messages for expired authentication, missing repo
 
 ## GitHub integration and future GitHub App
 
-Version 0.1.0 uses GitHub OAuth and the versioned GitHub REST API. The service layer is deliberately token-source agnostic so a GitHub App installation token can later replace the OAuth token.
+Version 1.0.0 uses GitHub OAuth and the versioned GitHub REST API. The service layer is deliberately token-source agnostic so a GitHub App installation token can later replace the OAuth token.
 
 Planned GitHub App work includes installation records, repository permission selection, signed webhook verification, deduplicated deliveries, and handlers for pull request, issue, push, installation, and installation-repository events. None of that webhook functionality is presented as implemented today.
 
@@ -193,10 +192,15 @@ Please review [SECURITY.md](SECURITY.md). Report vulnerabilities through GitHub 
 - Saved and exportable developer reports
 - Explicit confirmation-gated GitHub comments and reviews
 - PostgreSQL deployment profile
+- Improved repository-wide analysis for slower local models
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). All changes should preserve server-only secrets, verified-source grounding, no code execution, and explicit confirmation before any future GitHub write.
+
+## Release
+
+Latest public release: [RepoLens AI v1.0.0](https://github.com/Wadan3/ai-github-repository-assistant/releases/latest)
 
 ## License
 
