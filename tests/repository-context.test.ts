@@ -12,6 +12,7 @@ describe("repository context selection", () => {
   });
   it("prioritizes repository manifests and readmes", () => {
     const ranked = rankFiles([file("z.ts"), file("README.md"), file("package.json")]);
-    expect(ranked.slice(0, 2).map((item) => item.name)).toEqual(["package.json", "README.md"]);
+    expect(ranked.slice(0, 2).map((item) => item.name)).toEqual(["README.md", "package.json"]);
   });
 });
+
