@@ -1,0 +1,17 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, CircleDot, GitFork, LockKeyhole, Sparkles, Star } from "lucide-react";
+import { getServerGitHubClient } from "@/lib/github/server";
+import { formatCompactNumber, formatRelativeDate } from "@/lib/utils/format";
+
+export const metadata = { title: "Dashboard" };
+
+export default async function DashboardPage() {
+  const client = await getServerGitHubClient();
+  const repositories = client ? await client.listRepositories(1, 12).catch(() => []) : [];
+  const totals = repositories.reduce((acc, repo) => ({ stars: acc.stars + repo.stargazers_count, forks: acc.forks + repo.forks_count, issues: acc.issues + repo.open_issues_count }), { stars: 0, forks: 0, issues: 0 });
+  return <div className="page-stack"><div className="page-heading"><div><span className="eyebrow">Workspace overview</span><h1>Good to see you.</h1><p>Choose a recently active repository or continue exploring your GitHub workspace.</p></div><Link className="button button-primary" href="/repositories"><BookOpen size={17} /> Browse repositories</Link></div>
+    <section className="stats-grid"><article><span className="stat-icon violet"><BookOpen /></span><div><small>Accessible repositories</small><strong>{repositories.length}{repositories.length === 12 ? "+" : ""}</strong></div></article><article><span className="stat-icon amber"><Star /></span><div><small>Stars across recent repos</small><strong>{formatCompactNumber(totals.stars)}</strong></div></article><article><span className="stat-icon blue"><GitFork /></span><div><small>Forks across recent repos</small><strong>{formatCompactNumber(totals.forks)}</strong></div></article><article><span className="stat-icon green"><CircleDot /></span><div><small>Open issues</small><strong>{formatCompactNumber(totals.issues)}</strong></div></article></section>
+    <div className="dashboard-grid"><section className="panel"><div className="panel-heading"><div><h2>Recently active</h2><p>Your repositories, ordered by latest update.</p></div><Link href="/repositories">View all <ArrowRight size={14} /></Link></div><div className="recent-repos">{repositories.slice(0, 6).map((repo) => <Link href={`/repositories/${repo.owner.login}/${repo.name}`} key={repo.id}><span className="repo-icon small">{repo.private ? <LockKeyhole size={17} /> : <BookOpen size={17} />}</span><div><strong>{repo.full_name}</strong><p>{repo.description ?? "No description"}</p></div><div className="recent-meta"><span>{repo.language ?? "—"}</span><small>{formatRelativeDate(repo.updated_at)}</small></div></Link>)}{!repositories.length && <p className="empty-inline">No repositories could be loaded. Check your GitHub session and OAuth scopes.</p>}</div></section>
+      <aside className="panel quick-start"><div className="panel-heading"><div><h2>Assistant workflow</h2><p>Get useful context in three steps.</p></div></div><ol><li><span>1</span><div><strong>Select a repository</strong><p>Pick any repository your GitHub account can access.</p></div></li><li><span>2</span><div><strong>Inspect verified context</strong><p>Browse source files or run a bounded analysis.</p></div></li><li><span>3</span><div><strong>Ask grounded questions</strong><p>AI answers cite only paths it actually received.</p></div></li></ol><div className="privacy-callout"><Sparkles size={19} /><div><strong>Ollama runs locally</strong><p>Your selected repository context stays on your machine.</p></div></div></aside></div>
+  </div>;
+}

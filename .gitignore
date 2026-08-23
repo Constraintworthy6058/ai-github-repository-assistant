@@ -1,0 +1,36 @@
+# dependencies and builds
+node_modules/
+.npm-cache/
+.next/
+out/
+coverage/
+
+# local environment and secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+prisma/migrations/**/migration_lock.toml
+
+# logs and operating systems
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# generated Prisma client
+generated/
+
+tsconfig.tsbuildinfo
